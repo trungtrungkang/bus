@@ -35,7 +35,7 @@ function raiseEvent(evts: Array<any>, args: Array<any>, ctx?): Promise<any> {
     else return Promise.resolve();
 }
 
-export class EventService {
+class EventService {
     private events = {};
     private cats = {};
 
