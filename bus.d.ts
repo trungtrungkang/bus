@@ -11,3 +11,7 @@ export default class EventService {
     private static _instance;
     static singleton(): EventService;
 }
+
+declare module 'bus'{
+    export {EventService};
+}
