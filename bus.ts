@@ -35,7 +35,7 @@ function raiseEvent(evts: Array<any>, args: Array<any>, ctx?): Promise<any> {
     else return Promise.resolve();
 }
 
-export default class EventService {
+export class EventService {
     private events = {};
     private cats = {};
 
@@ -112,3 +112,7 @@ export default class EventService {
         return EventService._instance;
     }
 }
+
+const bus = EventService.singleton();
+
+export {bus, EventService};

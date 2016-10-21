@@ -44,7 +44,7 @@ var EventService = (function () {
     EventService.prototype.cat = function (name) {
         var bus = this.cats[name];
         if (!bus)
-            bus = this.cats[name] = new EventService();
+            exports.bus = bus = this.cats[name] = new EventService();
         return bus;
     };
     EventService.prototype.raise = function (name, args, ctx) {
@@ -109,5 +109,7 @@ var EventService = (function () {
     };
     return EventService;
 }());
-exports.__esModule = true;
-exports["default"] = EventService;
+exports.EventService = EventService;
+exports.EventService = EventService;
+var bus = EventService.singleton();
+exports.bus = bus;
